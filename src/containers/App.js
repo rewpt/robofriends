@@ -7,6 +7,16 @@ import Scroll from '../components/Scroll';
 import './App.css';
 import { setSearchField} from '../actions'
 
+const mapStateToProps = state => {
+  return {
+    searchField: state.searchRobots.searchField
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {onSearchChange: (event) => dispatch(setSearchField(event.target.value))}
+}
+
 class App extends Component {
   constructor() {
     super()
