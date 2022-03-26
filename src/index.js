@@ -5,13 +5,16 @@ import 'tachyons';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 import App from './containers/App';
+import { searchRobots } from './reducers';
 //import reportWebVitals from './reportWebVitals';
 
-const store = createStore(rootReducer);
+const store = createStore(searchRobots);
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store} >
+      <App />
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 );
